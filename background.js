@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -18,17 +17,20 @@ $(document).ready(function () {
   }
 
   function checkCookie() {
-  	console.log("hi");
     var latest = document.getElementsByClassName('row')[0].getAttribute("data-pid");
-    var pathname = location.pathname.split("/")[1];
+    var pathname = location.host+location.pathname;
     var lastVisited = getCookie(pathname);
 
-    // if the something saved isn't the most current thing
     if (lastVisited != "" && lastVisited < latest) {
-      console.log("new posts");
       $("[data-pid='" + lastVisited + "']").css({
-        "border-top": "1px solid red",
+        "border-top": "3px solid red",
         "padding-top": "10px"
+      });
+    }
+    else {
+      $("<p>No New Posts</p>").insertBefore("[data-pid='" + lastVisited + "']").css({
+        "color":"red",
+        "font-weight":"bold"
       });
     }
     setCookie(pathname, latest, 7);
