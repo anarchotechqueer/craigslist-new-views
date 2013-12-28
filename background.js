@@ -21,31 +21,39 @@ $(document).ready(function () {
     var latest = document.getElementsByClassName('row')[0].getAttribute("data-pid");
     var pathname = location.host+location.pathname;
     var lastVisited = getCookie(pathname);
-    if (lastVisited != "" && lastVisited < latest) {
-      if($("p[data-pid='"+lastVisited+"']").length ==0){
-        $("<p>All posts are new</p>").insertAfter(".toc_legend").not(".bottom").css({
-          "color":"red",
-          "font-weight":"bold",
-          "margin-bottom":"0",
-          "padding-top":"10px"
-        });
-      }
-      else{
+    if (lastVisited !="" && lastVisited < latest) {
+      if($("p[data-pid='"+lastVisited+"']")[0]){
         $("p[data-pid='" + lastVisited + "']").css({
           "border-top":"3px solid red",
           "padding-top":"10px"
         });
+        $("<p>New posts up red line.</p>").insertAfter(".toc_legend:not(.bottom)").css({
+          "color":"red",
+          "font-weight":"bold",
+          "margin-bottom":"0",
+          "padding-top":"10px"
+        });           
+      }
+      else{
+         $("<p>All posts are new.</p>").insertAfter(".toc_legend:not(.bottom)").css({
+          "color":"red",
+          "font-weight":"bold",
+          "margin-bottom":"0",
+          "padding-top":"10px"
+        });        
       }
     }
-    else {
-      $("<p>No New Posts</p>").insertAfter(".toc_legend").not(".bottom").css({
+    else if($("p[data-pid='"+lastVisited+"']")[0]) {
+      $("<p>No New Posts.</p>").insertAfter(".toc_legend:not(.bottom)").css({
         "color":"red",
         "font-weight":"bold",
         "margin-bottom":"0",
         "padding-top":"10px"
       });
     }
+
     setCookie(pathname, latest, 7);
   }
 });
+
 
