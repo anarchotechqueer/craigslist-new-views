@@ -27,7 +27,8 @@ $(document).ready(function () {
           "border-top":"3px solid red",
           "padding-top":"10px"
         });
-        $("<p>New posts up red line.</p>").insertAfter(".toc_legend:not(.bottom)").css({
+        var count = $("p[data-pid='"+lastVisited+"']").prevAll().length - 1;
+        $("<p>"+count+" new posts. Older posts begin at red line.</p>").insertAfter(".toc_legend:not(.bottom)").css({
           "color":"red",
           "font-weight":"bold",
           "margin-bottom":"0",
