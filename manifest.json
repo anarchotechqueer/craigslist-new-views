@@ -1,6 +1,6 @@
 {
   "name": "CraigsList: Last Visited",
-  "version": "1.6",
+  "version": "1.7",
   "description": "Visually shows you what the last post on any CraigsList page you've seen is.",
   "background": {"page": "background.html"},
   "manifest_version": 2,
