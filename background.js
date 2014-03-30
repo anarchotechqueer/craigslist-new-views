@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  checkCookie();
+
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -21,40 +21,46 @@ $(document).ready(function () {
     var latest = document.getElementsByClassName('row')[0].getAttribute("data-pid");
     var pathname = location.host+location.pathname;
     var lastVisited = getCookie(pathname);
+
+    // Makes the toastr notification
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "positionClass": "toast-top-right",
+      "onclick": null,
+      "timeOut": "null",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
+    // checks to see if there is a new post
     if (lastVisited !="" && lastVisited < latest) {
+      // if there are some posts
       if($("p[data-pid='"+lastVisited+"']")[0]){
         $("p[data-pid='" + lastVisited + "']").css({
           "border-top":"3px solid red",
           "padding-top":"10px"
         });
         var count = $("p[data-pid='"+lastVisited+"']").prevAll().length - 1;
-        $("<p>"+count+" new posts. Older posts begin at red line.</p>").insertAfter(".toc_legend:not(.bottom)").css({
-          "color":"red",
-          "font-weight":"bold",
-          "margin-bottom":"0",
-          "padding-top":"10px"
-        });           
+        var msg = count+ " new posts.";
+        toastr.info('Older posts begin at red line.',msg);
       }
+      // if all posts on the page are new
       else{
-         $("<p>All posts are new.</p>").insertAfter(".toc_legend:not(.bottom)").css({
-          "color":"red",
-          "font-weight":"bold",
-          "margin-bottom":"0",
-          "padding-top":"10px"
-        });        
+        toastr.info('There may be others on the next page.','All posts are new.');
       }
     }
+    // if there are no new posts
     else if($("p[data-pid='"+lastVisited+"']")[0]) {
-      $("<p>No New Posts.</p>").insertAfter(".toc_legend:not(.bottom)").css({
-        "color":"red",
-        "font-weight":"bold",
-        "margin-bottom":"0",
-        "padding-top":"10px"
-      });
+      toastr.info('Try again later.','No new posts.');
     }
 
     setCookie(pathname, latest, 7);
   }
+  $('.toast').css("background-color","#030303");
+  checkCookie();
 });
 
 
