@@ -59,7 +59,6 @@ $(document).ready(function () {
 
     setCookie(pathname, latest, 7);
   }
-  $('.toast').css("background-color","#030303");
   checkCookie();
 });
 
