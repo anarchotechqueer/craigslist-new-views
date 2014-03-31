@@ -1,26 +1,14 @@
 $(document).ready(function () {
 
-  function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-  }
-
-  function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i].trim();
-      if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-  }
-
-  function checkCookie() {
+  function checkStorage() {
+    // grabs ID of latest post on page
     var latest = document.getElementsByClassName('row')[0].getAttribute("data-pid");
+
+    // url, does not include posts (this is intentional)
     var pathname = location.host+location.pathname;
-    var lastVisited = getCookie(pathname);
+
+    // grabs the last post seen
+    var lastVisited = localStorage.getItem(pathname);
 
     // Makes the toastr notification
     toastr.options = {
@@ -57,9 +45,7 @@ $(document).ready(function () {
       toastr.info('Try again later.','No new posts.');
     }
 
-    setCookie(pathname, latest, 7);
+    localStorage.setItem(pathname, latest);
   }
-  checkCookie();
+  checkStorage();
 });
-
-
