@@ -1,6 +1,6 @@
 {
   "name": "CraigsList: Last Visited",
-  "version": "1.7",
+  "version": "1.8",
   "description": "Visually shows you what the last post on any CraigsList page you've seen is.",
   "background": {"page": "background.html"},
   "manifest_version": 2,
@@ -8,9 +8,10 @@
     "128": "128.png"
   },
   "content_scripts": [ {
-    "css": [ "toastr.min.css", "toastrfix.css" ],
-    "js": [ "jquery-2.0.2.min.js", "background.js", "toastr.min.js" ],
-    "matches" : ["*://*.craigslist.org/*"]
+    "css": [ "alertify.core.css", "alertify.default.css", "alertifyfix.css" ],
+    "js": [ "jquery-2.0.2.min.js", "background.js", "alertify.js" ],
+    "matches" : ["*://*.craigslist.org/*"],
+    "run_at": "document_end"
   }],
   "permissions": [
     "unlimitedStorage",
