@@ -1,9 +1,0 @@
-.toast {
-  background-color: #030303;
-}
-#toast-container > .toast {
-    background-image: none !important;
-}
-div.toast-title {
-	font-size: 1.1em;
-}
