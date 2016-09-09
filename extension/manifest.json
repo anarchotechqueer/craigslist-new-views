@@ -1,0 +1,20 @@
+{
+  "name": "CraigsList: Last Visited",
+  "version": "2.0",
+  "description": "Visually shows you what the last post on any CraigsList page you've seen is.",
+  "manifest_version": 2,
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [ {
+    "css": [ "toastr.min.css"],
+    "js": [ "jquery-2.0.2.min.js", "toastr.min.js", "background.js" ],
+    "matches" : ["*://*.craigslist.org/*"],
+    "run_at": "document_end"
+  }],
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}
