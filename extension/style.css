@@ -1,0 +1,39 @@
+.last-visited {
+  border-top: 3px solid #e74c3c;
+  padding-top: 10px;
+}
+
+
+.last-visited-popup {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(44, 62, 80, .95);
+  color: rgba(236, 240, 241,1.0);
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  z-index: 8000;
+  padding: 15px;
+  width: 250px;
+  height: 35px;
+}
+
+.last-visited-popup:hover {
+  background: rgba(26, 37, 47, .95);
+}
+
+.last-visited-popup .heading {
+  font-size: 16px;
+  font-weight: bold;
+
+}
+.last-visited-popup .sub {
+  font-size: 13px;
+  font-weight: bold;
+  color: #eee;
+
+}
+.hidden {
+  visibility: hidden;
+}
