@@ -1,14 +1,23 @@
-craigslist_last_visited
-=======================
+# CraigsList: Last Visited
 
-Description
------------
+## Description
 
-This is a Chrome App for improving your CraigsList experience.
-Saves your spot on any given CraigsList page, so that you only have to look through new posts.
+This is a Chrome Extension for improving your CraigsList experience.
+
+It saves your spot on any given CraigsList page, so that you only have to look through new posts.
+
 A red line appears above the last post you've seen, so you know when to stop.
 
-Install
------------------
+
+## Details
+
+The extension is built with vanilla js, having no external dependencies.
+
+The website is built with Bootstrap, Sass, and a bunch of other little things.
+
+## Install
 
 You can install it [here](https://chrome.google.com/webstore/detail/craigslist-last-visited/mpkmnnbdgbaddfngokdcdojhdakjhenm/).
+
+
+You can also view the website [here](https://lastvisited.herokuapp.com).
