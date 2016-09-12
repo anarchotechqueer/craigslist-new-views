@@ -23,7 +23,7 @@ function checkStorage() {
 
         if(lastVisitedNode) {
           var lineAtt = document.createAttribute("class");
-          lineAtt.value = "last-visited";
+          lineAtt.value = "row last-visited";
           lastVisitedNode.setAttributeNode(lineAtt);
 
           var prevAll = true;
