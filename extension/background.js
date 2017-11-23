@@ -1,6 +1,6 @@
 function checkStorage() {
 
-  var latestNode = document.getElementsByClassName("row")[0];
+  var latestNode = document.getElementsByClassName("result-row")[0];
 
   if (latestNode) {
     var latest = latestNode.getAttribute("data-pid");
