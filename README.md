@@ -1,4 +1,4 @@
-# CraigsList: Last Visited
+# CraigsList: New Views
 
 ## Description
 
@@ -20,4 +20,4 @@ The website is built with Bootstrap, Sass, and a bunch of other little things.
 You can install it [here](https://chrome.google.com/webstore/detail/craigslist-last-visited/mpkmnnbdgbaddfngokdcdojhdakjhenm/).
 
 
-You can also view the website [here](https://lastvisited.herokuapp.com).
+You can also view the website [here](https://newviews.herokuapp.com).
