@@ -17,7 +17,7 @@ The website is built with Bootstrap, Sass, and a bunch of other little things.
 
 ## Install
 
-You can install it [here](https://chrome.google.com/webstore/detail/craigslist-last-visited/mpkmnnbdgbaddfngokdcdojhdakjhenm/).
+You can install it [here](https://chrome.google.com/webstore/detail/craigslist-new-views/mpkmnnbdgbaddfngokdcdojhdakjhenm).
 
 
 You can also view the website [here](https://newviews.herokuapp.com).
