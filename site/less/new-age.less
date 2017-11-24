@@ -1,6 +1,5 @@
 @import "variables.less";
 @import "mixins.less";
-@import "slider.less";
 
 html,
 body {
@@ -14,7 +13,7 @@ body {
 
 a {
   .transition-all;
-  color: @theme-blue;
+  color: @theme-primary;
   &:hover,
   &:focus {
     color: darken(@theme-primary, 10%);
@@ -96,7 +95,7 @@ p {
     background-color: transparent;
     border-color: transparent;
     .navbar-header .navbar-brand {
-      color: fade(white, 70%);
+      color: @theme-primary;
       &:hover,
       &:focus {
         color: white;
@@ -105,8 +104,9 @@ p {
     .nav > li > a,
     .nav > li > a:focus {
       color: fade(white, 70%);
+      color: @theme-primary;
       &:hover {
-        color: white;
+        color: @theme-primary;
       }
     }
     &.affix {
@@ -137,10 +137,10 @@ header {
   width: 100%;
   min-height: auto;
   overflow-y: hidden;
-  background: url("../img/bg-pattern.png"), @theme-secondary; /* fallback for old browsers */
-  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, @theme-secondary , @theme-tertiary); /* Chrome 10-25, Safari 5.1-6 */
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, @theme-secondary , @theme-tertiary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: white;
+  background: url("../img/bg-pattern.png"), #fff; /* fallback for old browsers */
+  background: url("../img/bg-pattern.png"), #fff; /* Chrome 10-25, Safari 5.1-6 */
+  background: url("../img/bg-pattern.png"), #fff; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: @theme-primary;
   .header-content {
     text-align: center;
     padding: 150px 0 50px;
@@ -237,8 +237,7 @@ section.features {
     }
     i {
       font-size: 80px;
-       background: -webkit-linear-gradient(to left, @theme-secondary , @theme-tertiary);
-       background: linear-gradient(to left, @theme-secondary , @theme-tertiary);
+       background: @theme-primary;
        -webkit-background-clip: text;
        -webkit-text-fill-color: transparent;
     }
@@ -294,9 +293,7 @@ footer {
 }
 
 .bg-dark {
-  background: @theme-primary;
-  background: -webkit-linear-gradient(@theme-primary , darken(@theme-primary, 5%));
-  background: linear-gradient(@theme-primary , darken(@theme-primary, 5%));
+  background: @theme-dark;
 }
 
 .text-primary {
@@ -310,9 +307,9 @@ footer {
 
 // Button Styles
 .btn-outline {
-  color: white;
+  color: @theme-primary;
   border-color: white;
-  border: 1px solid;
+  border: 1px solid @theme-primary;
   &:hover,
   &:focus,
   &:active,
