@@ -1,7 +1,7 @@
 {
   "name": "CraigsList: New Views",
   "short_name": "CLNV",
-  "version": "3.0.4",
+  "version": "3.0.6",
   "description": "Visually shows you what the last post on any CraigsList page you've seen is.",
   "manifest_version": 2,
   "icons": {

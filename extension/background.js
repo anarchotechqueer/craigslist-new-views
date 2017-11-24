@@ -23,7 +23,7 @@ function checkStorage() {
 
         if(lastVisitedNode) {
           var lineAtt = document.createAttribute("class");
-          lineAtt.value = "row new-views";
+          lineAtt.value = "result-row new-views";
           lastVisitedNode.setAttributeNode(lineAtt);
 
           var prevAll = true;
