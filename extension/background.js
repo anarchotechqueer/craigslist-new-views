@@ -16,14 +16,14 @@ function checkStorage() {
         sub = "Try again later.";
       }
       else if(lastVisited < latest) {
-        var lastVisitedString = "p[data-pid='" + lastVisited+ "']";
+        var lastVisitedString = "li[data-pid='" + lastVisited+ "']";
         display = true;
 
         lastVisitedNode = document.querySelector(lastVisitedString);
 
         if(lastVisitedNode) {
           var lineAtt = document.createAttribute("class");
-          lineAtt.value = "row last-visited";
+          lineAtt.value = "row new-views";
           lastVisitedNode.setAttributeNode(lineAtt);
 
           var prevAll = true;
@@ -71,7 +71,7 @@ function checkStorage() {
       popupNode.appendChild(subNode);
 
       var popupAtt = document.createAttribute("class");
-      popupAtt.value = "last-visited-popup";
+      popupAtt.value = "new-views-popup";
       popupNode.setAttributeNode(popupAtt);
 
       popupNode.onclick = function() {
