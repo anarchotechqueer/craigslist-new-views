@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="google-site-verification" content="fe_z1-bJl7KnS_xXYGPDpDJbMHgeZC0NtfHXusd-Gng" />
 
   <title>CraigsList: New Views</title>
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
@@ -26,6 +27,9 @@
 
   <!-- Theme CSS -->
   <link href="css/new-age.min.css" rel="stylesheet">
+  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/craigslist-new-views/mpkmnnbdgbaddfngokdcdojhdakjhenm">
+
+
 
   <!-- <link href="css/slider.css" rel="stylesheet"> -->
 
@@ -74,7 +78,7 @@
             <div class="header-content-inner">
               <h1>CraigsList: New Views</h1>
               <h2>Making your CraigsList browsing better!</h2>
-              <a class="btn btn-outline btn-xl " href="https://chrome.google.com/webstore/detail/craigslist-new-views/mpkmnnbdgbaddfngokdcdojhdakjhenm">Install</a>
+              <a class="btn btn-outline btn-xl " id="install-btn" onclick="chrome.webstore.install();">Install</a>
               <a href="#features" class="btn btn-outline btn-xl page-scroll">Learn More</a>
             </div>
           </div>
@@ -180,6 +184,16 @@
 
   <!-- Theme JavaScript -->
   <script src="js/new-age.min.js"></script>
+  <script>
+if (chrome.app.isInstalled) {
+  console.log('installed');
+  document.getElementById('install-button').style.display = 'none';
+}
+else {
+  console.log('not installed');
+}
+</script>
+
 
 </body>
 
