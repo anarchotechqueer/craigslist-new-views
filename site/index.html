@@ -80,6 +80,12 @@
               <h2>Making your CraigsList browsing better!</h2>
               <a class="btn btn-outline btn-xl " id="install-btn" onclick="chrome.webstore.install();">Install</a>
               <a href="#features" class="btn btn-outline btn-xl page-scroll">Learn More</a>
+              <div id="install-chrome">
+                <!-- <br> -->
+                <p>Oops! You're not using a Chrome Browser!</p>
+                <a class="btn btn-outline btn-xl" href="">Download</a>
+
+              </div>
             </div>
           </div>
         </div>
@@ -184,6 +190,12 @@
 
   <!-- Theme JavaScript -->
   <script src="js/new-age.min.js"></script>
+  <script>
+  var hideElement = !(!!window.chrome && !!window.chrome.webstore) ? document.getElementById('install-btn') : document.getElementById('install-chrome');
+
+  hideElement.style.display = 'none';
+  </script>
+
 </body>
 
 </html>

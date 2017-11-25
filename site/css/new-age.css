@@ -174,6 +174,9 @@ header .header-content .header-content-inner h2 {
 header .header-content .header-content-inner a {
   margin-right: 10px;
 }
+header .header-content .header-content-inner #install-chrome {
+  margin-top: 20px;
+}
 header .device-container {
   max-width: 300px;
   margin: 0 auto 100px;
