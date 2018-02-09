@@ -1,0 +1,45 @@
+body {
+	font-family: 'Fira Sans', sans-serif;
+  color: #424651;
+}
+
+p {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  color: #747572;
+}
+
+.button:hover {
+  color: #be90d4;
+  border-color: #be90d4;;
+}
+
+.title {
+  color: #be90d4;
+}
+
+a {
+  color: #be90d4;
+}
+
+a.navbar-item.is-active,
+a.navbar-item:hover,
+a.navbar-link.is-active,
+a.navbar-link:hover {
+  color: #be90d4;
+}
+
+.footer {
+  background: #be90d4;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer p {
+  font-style: initial;
+  font-family: 'Fira Sans', sans-serif;
+  color: #747572;
+}
+
