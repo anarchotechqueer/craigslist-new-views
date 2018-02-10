@@ -19,12 +19,15 @@ function checkStorage() {
         var lastVisitedString = "li[data-pid='" + lastVisited+ "']";
         display = true;
 
+        console.log(lastVisitedString);
+
         lastVisitedNode = document.querySelector(lastVisitedString);
 
+        console.log(lastVisitedNode);
+
         if(lastVisitedNode) {
-          var lineAtt = document.createAttribute("class");
-          lineAtt.value = "result-row new-views";
-          lastVisitedNode.setAttributeNode(lineAtt);
+
+          lastVisitedNode.insertAdjacentHTML("beforebegin", "<div class='new-views'></div>");
 
           var prevAll = true;
 
@@ -32,7 +35,8 @@ function checkStorage() {
             return (htmlElement === lastVisitedNode) ? prevAll = false : prevAll;
           });
 
-          var count = prevAll.length;
+          // remove count for added new-line div
+          var count = prevAll.length -1;
 
           if(count == 1) {
             heading = count + " new post.";
@@ -41,13 +45,19 @@ function checkStorage() {
             heading = count + " new posts.";
           }
 
-          sub = "Older posts begin at red line.";
+          sub = "Older posts begin at dividing line.";
         }
         else {
           heading = "All posts are new.";
           sub = "There may be others on the next page.";
         }
-      }
+
+        // first dropdown controls views
+        // last child is 'map' view
+        if (document.getElementsByClassName("dropdown-list")[0].getElementsByClassName("dropdown-item")[3].classList.contains("sel")) {
+          sub +=" Switch out of 'map' view to see.";
+        }
+      } 
     }
 
     if (display) {

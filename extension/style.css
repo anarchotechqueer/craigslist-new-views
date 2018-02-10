@@ -1,15 +1,14 @@
 .new-views {
-  border-top: 3px solid #e74c3c;
+  border-top: 3px solid rgba(190,144,212,.95);
   padding-top: 15px !important;
 }
-
 
 .new-views-popup {
   cursor: pointer;
   padding: 5px;
   border-radius: 5px;
-  background: rgba(190,144,212,.95);
-  color: #fff;
+  color: rgba(190,144,212,.95);
+  background: #fff;
   position: fixed;
   top: 50px;
   right: 10px;
@@ -17,10 +16,8 @@
   padding: 15px;
   width: 250px;
   height: 35px;
-}
-
-.new-views-popup:hover {
-  background: rgba(155,89,182,.95);
+  border-color: rgba(190,144,212,.95);
+  border: 1px solid;
 }
 
 .new-views-popup .heading {
@@ -28,12 +25,13 @@
   font-weight: bold;
 
 }
+
 .new-views-popup .sub {
   font-size: 13px;
-  font-weight: bold;
   color: #fff;
-
+  color: rgba(190,144,212,.95);
 }
+
 .hidden {
   visibility: hidden;
 }
