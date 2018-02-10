@@ -43,3 +43,33 @@ a.navbar-link:hover {
   color: #747572;
 }
 
+.slider {
+  position: relative;
+  width: 400%;
+  overflow: hidden;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 12s slidecss infinite; 
+}
+
+.slider img {
+  width: 25%;
+  float: left;
+}
+
+.facade-minimal {
+  padding: 54px 0 0 0;
+}
+
+@keyframes slidecss {
+  0% { left: 0%; }
+  20% {left: 0%;}
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  70% { left: -200%;}
+  75% {left: -300%;}
+  100% { left: -300%; }
+}
