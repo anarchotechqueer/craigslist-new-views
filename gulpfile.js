@@ -6,12 +6,13 @@ var sass     = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 var rename   = require('gulp-rename');
 
-
 var sassExtension = 'extension/scss/**/*.scss';
 var destExtension = 'extension/mini/';
 
 var sassSite      = 'site/scss/**/*.scss';
 var destSite      = 'site/css/';
+
+process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 gulp.task('stylesExtension', function(){
   gulp.src(sassExtension)
@@ -45,7 +46,9 @@ gulp.task('default', function() {
   gulp.run('stylesSite')
   gulp.run('jsExtension')
 
-  gulp.watch(sassExtension, ['stylesExtension']);
-  gulp.watch(sassSite,      ['stylesSite']);
-  gulp.watch(['extension/js/*.js', '!extension/mini/*.js'],['jsExtension']);
+  if (process.env.NODE_ENV !== "production") {
+    gulp.watch(sassExtension, ['stylesExtension']);
+    gulp.watch(sassSite,      ['stylesSite']);
+    gulp.watch(['extension/js/*.js', '!extension/mini/*.js'],['jsExtension']);
+  }  
 });
