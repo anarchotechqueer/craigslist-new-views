@@ -42,9 +42,9 @@ gulp.task('jsExtension', function(){
 });
 
 gulp.task('default', function() {
-  gulp.run('stylesExtension')
-  gulp.run('stylesSite')
-  gulp.run('jsExtension')
+  gulp.start('stylesExtension')
+  gulp.start('stylesSite')
+  gulp.start('jsExtension')
 
   if (process.env.NODE_ENV !== "production") {
     gulp.watch(sassExtension, ['stylesExtension']);
