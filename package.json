@@ -11,11 +11,10 @@
     "express": "^4.14.0"
   },
   "scripts": {
-    "preinstall": "npm install --only=dev",
     "start": "node server.js",
     "postinstall": "gulp default"
   },
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-clean-css": "^3.9.2",
