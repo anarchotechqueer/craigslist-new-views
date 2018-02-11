@@ -11,6 +11,7 @@
     "express": "^4.14.0"
   },
   "scripts": {
+    "preinstall": "npm install --only=dev",
     "start": "node server.js",
     "postinstall": "gulp default"
   },
