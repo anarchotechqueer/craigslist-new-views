@@ -1,3 +1,5 @@
+@import "facade";
+
 body {
 	font-family: 'Fira Sans', sans-serif;
   color: #424651;
@@ -20,27 +22,28 @@ p {
 
 a {
   color: #be90d4;
+
+  &.navbar-link.is-active,
+  &.navbar-item:hover,
+  &.navbar-link.is-active,
+  &.navbar-link:hover {
+    color: #be90d4;
+  }
 }
 
-a.navbar-item.is-active,
-a.navbar-item:hover,
-a.navbar-link.is-active,
-a.navbar-link:hover {
-  color: #be90d4;
-}
 
 .footer {
   background: #be90d4;
-}
 
-.footer a {
-  color: white;
-}
+  a {
+    color: white;
+  }
 
-.footer p {
-  font-style: initial;
-  font-family: 'Fira Sans', sans-serif;
-  color: #747572;
+  p {
+    font-style: initial;
+    font-family: 'Fira Sans', sans-serif;
+    color: #747572;
+  }
 }
 
 .slider {
@@ -52,11 +55,11 @@ a.navbar-link:hover {
   text-align: left;
   font-size: 0;
   animation: 12s slidecss infinite; 
-}
 
-.slider img {
-  width: 25%;
-  float: left;
+  img {
+    width: 25%;
+    float: left;
+  }
 }
 
 .facade-minimal {

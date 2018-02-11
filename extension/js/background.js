@@ -1,5 +1,4 @@
-function checkStorage() {
-
+;(function(){
   var latestNode = document.getElementsByClassName("result-row")[0];
 
   if (latestNode) {
@@ -19,11 +18,7 @@ function checkStorage() {
         var lastVisitedString = "li[data-pid='" + lastVisited+ "']";
         display = true;
 
-        console.log(lastVisitedString);
-
         lastVisitedNode = document.querySelector(lastVisitedString);
-
-        console.log(lastVisitedNode);
 
         if(lastVisitedNode) {
 
@@ -51,6 +46,7 @@ function checkStorage() {
           heading = "All posts are new.";
           sub = "There may be others on the next page.";
         }
+
 
         // first dropdown controls views
         // last child is 'map' view
@@ -94,8 +90,7 @@ function checkStorage() {
       document.querySelector("body").appendChild(popupNode);
     }
 
-  localStorage.setItem(pathname, latest);
+    localStorage.setItem(pathname, latest);
   }
-}
 
-checkStorage();
+})();
