@@ -47,7 +47,6 @@
           sub = "There may be others on the next page.";
         }
 
-
         // first dropdown controls views
         // last child is 'map' view
         if (document.getElementsByClassName("dropdown-list")[0].getElementsByClassName("dropdown-item")[3].classList.contains("sel")) {
