@@ -1,0 +1,78 @@
+@import '../../variables';
+
+.hero {
+  padding: $space-big $space-double;
+  position: relative;
+  flex-grow: 1;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    padding: $space-double $space-big;
+  }
+
+  .content {
+    flex-shrink: 0;
+    margin-bottom: $space-big;
+
+    @include tablet {
+      margin-bottom: 0;
+      margin-right: $space-big;
+    }
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    font-size: 2.4rem;
+    font-weight: 800;
+    white-space: nowrap;
+
+    margin-top: $space;
+  }
+
+  .text {
+    margin-top: $space-double;
+  }
+
+  .cta {
+    color: currentColor;
+    padding: $space $space-double;
+    border: 2px solid currentColor;
+    display: inline-block;
+    margin-top: $space-big;
+  }
+
+  .example {
+    position: relative;
+    @include tablet {
+      margin-right: -$space-big;
+      margin-left: $space-big * 2;
+      margin-top: $space-big
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -$space-double;
+      left: -$space-double;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient($color-main 20%, transparent 20%);
+      background-position: 0 0;
+      background-size: 10px 10px;
+      height: 100%;
+      width: 100%;
+
+      @include tablet {
+        top: -$space-big;
+        left: -$space-big;
+      }
+    }
+  }
+}

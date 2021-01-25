@@ -1,0 +1,44 @@
+$font-main: 'Noto Sans JP', sans-serif;
+
+$screen-tablet: 800px;
+$screen-desktop: 1200px;
+
+$color-dark: #111218;
+$color-main: #B37DB5;
+// $color-alt: #fff;
+$color-lite: #fff;
+
+$space: 1rem;
+$space-double: $space * 2;
+$space-big: $space * 4;
+$space-half: $space / 2;
+$space-small: $space * .75;
+
+@mixin tablet {
+  @media (min-width: $screen-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $screen-desktop) {
+    @content;
+  }
+}
+
+@mixin spacingless {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin rich-text {
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

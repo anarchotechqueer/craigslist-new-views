@@ -9,9 +9,6 @@ var rename   = require('gulp-rename');
 var sassExtension = 'extension/scss/**/*.scss';
 var destExtension = 'extension/mini/';
 
-var sassSite      = 'site/scss/**/*.scss';
-var destSite      = 'site/public/css/';
-
 process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 gulp.task('stylesExtension', function(){
@@ -24,16 +21,6 @@ gulp.task('stylesExtension', function(){
   .pipe(gulp.dest(destExtension));
 });
 
-gulp.task('stylesSite', function(){
-  gulp.src(sassSite)
-  .pipe(sass().on('error', sass.logError))
-  .pipe(prefix('last 2 versions'))
-  .pipe(concat('style.css'))
-  .pipe(cleanCSS({compatibility: 'ie8'}))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest(destSite));
-});
-
 gulp.task('jsExtension', function(){
   gulp.src('extension/js/*.js')
   .pipe(uglify())
@@ -41,23 +28,13 @@ gulp.task('jsExtension', function(){
   .pipe(gulp.dest('extension/mini/'))
 });
 
-gulp.task('jsSite', function(){
-  gulp.src('site/js/*.js')
-  .pipe(uglify())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('site/public/js/'))
-});
 
 gulp.task('default', function() {
   gulp.start('stylesExtension')
-  gulp.start('stylesSite')
   gulp.start('jsExtension')
-  gulp.start('jsSite')
 
   if (process.env.NODE_ENV !== "production") {
     gulp.watch(sassExtension, ['stylesExtension']);
-    gulp.watch(sassSite,      ['stylesSite']);
     gulp.watch('extension/js/*.js',['jsExtension']);
-    gulp.watch('site/js/*.js',['jsSite']);
-  }  
+  }
 });
