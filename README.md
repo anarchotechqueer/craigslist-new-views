@@ -12,8 +12,8 @@ A dividing line appears above the last post you've seen, so you know when to sto
 * The extension is built with vanilla js, having no external dependencies.
 
 ## Website
-* You can view it: [here](http://newviews.herokuapp.com/)
-* The website is built with: Bulma, vanilla js
+* You can view it: [here](https://craigslist-new-views.vercel.app/)
+* The website is built with: React
 
 ## Updating
 Gulp is used to watch changes on both the extension and site scss and javascript, and minifies them.
